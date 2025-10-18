@@ -1,0 +1,24 @@
+  GNU nano 7.2                         kubsh.c                                  
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<string.h>
+#include<signal.h>
+
+#include<readline/readline.h>
+#include <readline/history.h>
+
+#define HISTORY_FILE ".kubsh_history"
+
+sig_atomic_t signal_received = 0;
+
+void debug(char *line){
+        printf("%s\n", line);
+}
+void sig_handler(int signum){
+        signal_received = signum;
+        printf("Configuration reloaded");
+}
+           [ line  1/53 ( 1%), col  1/18 (  5%), char   0/869 ( 0%) ]
+^G Справка   ^O Записать  ^W Поиск     ^K Вырезать  ^T Выполнить ^C Позиция
+^X Выход     ^R ЧитФайл   ^\ Замена    ^U Вставить  ^J Выровнять ^/ К строке
